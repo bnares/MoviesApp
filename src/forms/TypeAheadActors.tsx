@@ -27,8 +27,20 @@ export default function TypeAheadActors(props:typeAheadActosProps){
                 placeholder={"Write the name of the actor"}
                 minLength={1}
                 dropup={true}
-                
-
+                renderMenuItemChildren={(actor,menu,index)=>(
+                    <>
+                        {console.log(actor)}
+                        {menu.text}
+                        <img alt="actor" src={actor.picture} 
+                            style={{
+                                height:'64px',
+                                marginRight:'10px',
+                                width:'64px'
+                            }}
+                        />
+                        <span>{actor.name}</span>
+                    </>
+                )}
             />
         </div>
     )
